@@ -1,1 +1,52 @@
 @import "tailwindcss";
+
+@theme {
+  --color-canvas: #fcfaf8;
+  --color-brand: #d94738;
+  --color-brand-hover: #bc3428;
+  --color-brand-soft: #fbece7;
+  --color-upload: #fffcfa;
+  --color-surface: #f2efeb;
+  --color-ink: #302b28;
+  --color-muted: #79716b;
+  --color-subtle: #8e857c;
+  --color-line: #e9e2db;
+  --font-sans: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+  --radius-panel: 28px;
+  --shadow-panel: 0 12px 45px -16px #59372b16;
+  --animate-enter: enter 600ms ease-out both;
+  @keyframes enter {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--font-sans); -webkit-font-smoothing: antialiased; word-break: keep-all; }
+  button, a, input { -webkit-tap-highlight-color: transparent; }
+  button { cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--color-brand); outline-offset: 5px; }
+  ::selection { background: var(--color-brand-soft); color: var(--color-brand); }
+}
+
+@layer components {
+  .button-primary {
+    border-radius: 12px;
+    background: var(--color-brand);
+    padding: 14px 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 4px 8px #d9473815;
+    transition: background 180ms, transform 180ms, box-shadow 180ms;
+  }
+  .button-primary:hover { background: var(--color-brand-hover); box-shadow: 0 6px 14px #d9473825; transform: translateY(-1px); }
+  .button-primary:active { transform: translateY(0); }
+  .upload-surface { box-shadow: var(--shadow-panel); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
