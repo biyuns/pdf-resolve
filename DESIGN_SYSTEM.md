@@ -32,7 +32,7 @@ Tailwind CSS v4의 `src/app/globals.css` 내 `@theme`이 디자인 토큰의 원
 
 파일 선택 및 드롭 시 파일명만 브라우저에 표시합니다. 서버 업로드, PDF 분석·변환, 암호 제거, 다운로드는 구현하지 않았습니다. PDF 확장자가 아닌 파일에는 안내를 표시합니다.
 
-임시 서비스명은 `src/app/page.tsx`와 `src/app/layout.tsx`에서 변경할 수 있습니다.
+임시 서비스명은 `src/app/components/`의 브랜드 표기와 `src/app/layout.tsx`에서 변경할 수 있습니다.
 
 ## 실행
 
